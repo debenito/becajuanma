@@ -1,0 +1,43 @@
+<ion-content class="ion-padding" [fullscreen]="false">
+  <ion-grid class="ion-padding">
+    <ion-title><h1> Registro de Usuarios</h1></ion-title>
+    <ion-row>
+      <ion-col> 
+        <ion-item>
+          <ion-label position="stacked">Email</ion-label>
+          <ion-input type="email" [(ngModel)]="email" placeholder="Email" [readonly]="read"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label position="stacked">Usuario</ion-label>
+          <ion-input type="usuario" [(ngModel)]="usuario" placeholder="Usuario" [readonly]="read"></ion-input>
+        </ion-item></ion-col>
+      <ion-col>
+         <ion-item>
+          <ion-label position="stacked">Contraseña</ion-label>
+          <ion-input type="password" [(ngModel)]="password" placeholder="Contraseña" [readonly]="read"></ion-input>
+        </ion-item> 
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-button (click)="addUser()">
+            <ion-icon slot="icon-only" name="star"></ion-icon>
+            Guardar
+          </ion-button>
+          <ion-button (click)="deleteUser()">
+            <ion-icon slot="icon-only" name="star"></ion-icon>
+            Eliminar
+          </ion-button>
+          <ion-button (click)="editUser()">
+            <ion-icon slot="icon-only" name="star"></ion-icon>
+            Editar
+          </ion-button>
+       </ion-item> 
+     </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+</ion-content>
