@@ -1,4 +1,4 @@
-package com.juanma.repository.impl;
+package com.juanma.repository.model;
 
 import java.util.HashSet;
 import java.util.Set;

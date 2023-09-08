@@ -2,7 +2,7 @@ package com.juanma.controller.vo;
 
 import java.util.Set;
 
-import com.juanma.repository.impl.Role;
+import com.juanma.repository.model.Role;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

@@ -7,9 +7,9 @@ import org.springframework.stereotype.Service;
 
 import com.juanma.controller.vo.PaginaVO;
 import com.juanma.repository.PaginaRepository;
-import com.juanma.repository.impl.Pagina;
-import com.juanma.service.Conversor;
+import com.juanma.repository.model.Pagina;
 import com.juanma.service.IHomeService;
+import com.juanma.service.mapper.Conversor;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

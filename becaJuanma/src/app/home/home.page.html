@@ -35,16 +35,17 @@
     <ion-card-header>
       <ion-card-title>
         <h1> {{home.titulo}} </h1>
+       <div *ngIf="isAdmin">
           <ion-item fill="outline" >
             <ion-label position="floating">Titulo 1</ion-label>
             <ion-input [clearInput]="true" placeholder="Introduce el titulo Principal" [(ngModel)]="home.titulo" >
             </ion-input>
       </ion-item>
-     
+    </div>
     </ion-card-title>
-    <div class="center">
+    <div class="center"  *ngIf="isAdmin">
     <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" 
-    (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)">
+    (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" >
         <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
           Sube tu fichero o imagen en este apartado
           <button type="button" (click)="openFileSelector()">Buscar ficheros</button>
@@ -68,21 +69,24 @@
       <img alt="beca juanma" src="{{home.img}}" />
 
       <ion-card-subtitle><span>{{home.titulo2}}</span></ion-card-subtitle>
+      <div *ngIf="isAdmin">
        <ion-item fill="outline">
             <ion-label position="floating">Titulo 2</ion-label>
             <ion-input [clearInput]="true" placeholder="Introduce el titulo 2" [(ngModel)]="home.titulo2" >
             </ion-input>
       </ion-item>
+    </div>
     </ion-card-header>
   
     <ion-card-content>
       {{home.contenido}}
-
+      <div *ngIf="isAdmin">
        <ion-item fill="outline">
             <ion-label position="floating">Contenido</ion-label>
             <ion-textarea [clearOnEdit]="true" placeholder="Introduce el titulo Contenido" [(ngModel)]="home.contenido" >
             </ion-textarea>
       </ion-item>
+    </div>
     </ion-card-content>
     <ion-button fill="clear">{{home.numeroPagina}}</ion-button>
     <ion-button fill="clear">Pagina 2</ion-button>

@@ -1,11 +1,13 @@
-package com.juanma.repository.impl;
+package com.juanma.repository.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,19 +16,18 @@ import lombok.Setter;
 
 @Entity
 @Builder
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Setter
-@Table(name = "paginas")
-public class Pagina {
+@Table(name = "roles")
+public class Role {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
-	@NotBlank
-	private String titulo;
-	private String contenido;
-	private String imagen;
+	@Enumerated(EnumType.STRING)
+	@Column(length = 20)
+	private ERole name;
 
 }

@@ -1,9 +1,9 @@
-package com.juanma.service;
+package com.juanma.service.mapper;
 
 import org.springframework.stereotype.Component;
 
 import com.juanma.controller.vo.PaginaVO;
-import com.juanma.repository.impl.Pagina;
+import com.juanma.repository.model.Pagina;
 
 @Component
 public class Conversor {

@@ -1,4 +1,4 @@
-package com.juanma.repository.impl;
+package com.juanma.repository.model;
 
 public enum ERole {
   ROLE_USER,
