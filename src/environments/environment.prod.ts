@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+ API_URL: "https://gandulin-c72709c88907.herokuapp.com"
 };

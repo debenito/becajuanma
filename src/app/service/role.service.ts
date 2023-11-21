@@ -3,6 +3,7 @@ import { Router, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot, 
 import { Observable } from 'rxjs';
 import { HttpClient, HttpParams } from "@angular/common/http";
 import { Message } from '../model/message.model';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -57,7 +58,7 @@ export class RoleService implements CanActivateChild {
       token = "Invalid";
     let params = new HttpParams().set('username', token +"");
 
-    return this.http.get<Message>('/api/check',  { params: params });
+    return this.http.get<Message>(environment.API_URL+'/api/check',  { params: params });
   }
 
 }

@@ -3,6 +3,8 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { HomeModel } from '../model/home-model.model';
+import { environment } from '../../environments/environment';
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +15,7 @@ export class PaginasService {
 
   listPaginas():Observable<HomeModel[]>{
 
-    return this.http.get<HomeModel[]>('/api/home/paginas');
+    return this.http.get<HomeModel[]>(environment.API_URL+'/api/home/paginas');
   }
 
   crearPaginas(home:HomeModel):Observable<HomeModel>{
@@ -26,7 +28,7 @@ export class PaginasService {
   eliminarPagina(numeroPagina:number){
     let token = 'Bearer ' +localStorage.getItem("token") || "" ;
    
-    return this.http.delete<HomeModel>('/api/home/'+numeroPagina,{
+    return this.http.delete<HomeModel>(environment.API_URL+'/api/home/'+numeroPagina,{
       headers: {'Authorization': token}
     });
   }
