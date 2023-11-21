@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
     "@ionic/angular": "^6.1.9",
+    "express": "^4.18.2",
     "ionicons": "^6.0.3",
     "ngx-file-drop": "^15.0.0",
     "ngx-pagination": "^5.1.0",
@@ -59,8 +60,7 @@
   },
   "engines": {
     "node": "16.13.0",
-    "npm":  "8.2.0"
+    "npm": "8.2.0"
   },
-  
   "description": "Proyecto becaJuanma"
 }
