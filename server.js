@@ -16,7 +16,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.use(express.static('www'));
+app.use(express.static(__dirname));
 app.listen(process.env.PORT || 5000, function(){
     console.log("Node app is running at localhost:" + app.get('port'));
   });
