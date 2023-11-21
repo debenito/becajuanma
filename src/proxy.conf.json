@@ -1,6 +1,6 @@
 {
     "/api/*": {
-      "target": "http://localhost:8080",
+      "target": "https://gandulin-c72709c88907.herokuapp.com",
       "secure": false,
       "logLevel": "debug"
     }
