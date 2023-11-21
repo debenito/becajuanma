@@ -1,5 +1,0 @@
-web: node --gc_interval=100 server.js
-
-
-
-
