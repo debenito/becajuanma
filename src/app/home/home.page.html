@@ -1,0 +1,103 @@
+
+<ion-content [fullscreen]="false" [scrollEvents]="true"  
+(ionScrollStart)="handleScrollStart()" 
+>
+<ion-button (click)="handleScrollEnd()">Menu</ion-button>
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Beca Juanma</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card color="secondary">
+<ion-grid *ngIf="isAdmin == true">
+  <ion-row>
+   <ion-col >
+          <ion-item color="secondary">
+            <ion-button (click)="guardarPagina(home)">
+              <ion-icon slot="icon-only" name="save-outline"> </ion-icon>
+              Guardar
+            </ion-button>
+            <ion-button  (click)="eliminarPagina(home.numeroPagina)">
+              <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+              Eliminar
+            </ion-button>
+            <ion-button  (click)="editarPagina(home)" >
+              <ion-icon slot="icon-only"  name="construct-outline"></ion-icon>
+              Editar
+            </ion-button>
+             <ion-button  (click)="crearPagina()">
+              <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+              Crear 
+            </ion-button>
+         </ion-item> 
+       </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-card-header>
+      <ion-card-title>
+        <h1> {{home.titulo}} </h1>
+       <div *ngIf="isAdmin == true">
+          <ion-item fill="outline" >
+            <ion-label position="floating">Titulo 1</ion-label>
+            <ion-input [clearInput]="true" placeholder="Introduce el titulo Principal" [(ngModel)]="home.titulo" >
+            </ion-input>
+      </ion-item>
+    </div>
+    </ion-card-title>
+    <div class="center"  *ngIf="isAdmin == true">
+    <ngx-file-drop dropZoneLabel="Drop files here" (onFileDrop)="dropped($event)" 
+    (onFileOver)="fileOver($event)" (onFileLeave)="fileLeave($event)" >
+        <ng-template ngx-file-drop-content-tmp let-openFileSelector="openFileSelector">
+          Sube tu fichero o imagen en este apartado
+          <button type="button" (click)="openFileSelector()">Buscar ficheros</button>
+        </ng-template>
+    </ngx-file-drop>
+    <div class="upload-table">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody class="upload-name-style">
+                <tr *ngFor="let item of files; let i=index">
+                    <td><strong>{{ item.relativePath }}</strong></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+      <img alt="beca juanma" src= "{{home.imagen}}" />
+ 
+      <ion-card-subtitle><h2>{{home.titulo2}}</h2></ion-card-subtitle>
+      <div *ngIf="isAdmin == true">
+       <ion-item fill="outline">
+            <ion-label position="floating">Titulo 2</ion-label>
+            <ion-input [clearInput]="true" placeholder="Introduce el titulo 2" [(ngModel)]="home.titulo2" >
+            </ion-input>
+      </ion-item>
+    </div>
+    </ion-card-header>
+  
+    <ion-card-content>
+     <span class="contenido"> {{home.contenido}}</span>
+      <div *ngIf="isAdmin == true">
+       <ion-item fill="outline">
+            <ion-label position="floating">Contenido</ion-label>
+            <ion-textarea [clearOnEdit]="true" placeholder="Introduce el titulo Contenido" [(ngModel)]="home.contenido" >
+            </ion-textarea>
+      </ion-item>
+    </div>
+    </ion-card-content>
+    <div  *ngFor="let pagina of homeList | paginate:
+      pagingConfig;
+       let i = index" ></div>
+       <pagination-controls 
+       class="paginator"       
+       previousLabel="Prev"
+       nextLabel="Next"
+       (pageChange)=" onChange($event)"  ></pagination-controls>
+     </ion-card>
+       
+</ion-content>

@@ -1,0 +1,63 @@
+/* iOS places the subtitle above the title */
+ion-card-header.ios {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+  h1{
+    font-family: "Mariposa";
+    font-size: 100px;
+  }
+  h2{
+    font-family: "Mariposa";
+    font-size: 60px;
+  }
+
+pagination-controls {
+  font-size: 40px;
+
+  }
+img{
+  width: 50%;
+  height:50%;
+  border-radius: 5%;
+  box-shadow: 0 10px 10px 0 rgba(245, 244, 244, 0.15);
+
+
+}
+
+.contenido{
+  font-size: 25px;
+  font-family: 'Courier New', Courier, monospace;
+
+}
+
+.paginas{
+  display: inline-block;
+
+}
+
+.ion-color-secondary {
+  --ion-color-base:#2d608f !important
+}
+ion-card{
+  text-align: center;
+}
+ion-card-title{
+  text-align: center;
+}
+
+.paginator {
+  .ngx-pagination {
+      padding: 0;
+      li:not(.current, .pagination-next, .pagination-previous) {
+          background: rgba(235, 235, 235, 1);
+         
+      }
+
+      a,
+      .current {
+        font-family: "Mariposa";
+          padding: 1rem 1.5rem;
+      }
+  }
+}
