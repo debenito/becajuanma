@@ -6,7 +6,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration production --aot",
+    "build": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"
@@ -29,7 +29,9 @@
     "ngx-pagination": "^5.1.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "@angular/cli": "^15.0.0",
+    "@angular/compiler": "^15.0.0"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^15.0.0",
@@ -37,8 +39,6 @@
     "@angular-eslint/eslint-plugin": "^14.0.0",
     "@angular-eslint/eslint-plugin-template": "^14.0.0",
     "@angular-eslint/template-parser": "^14.0.0",
-    "@angular/cli": "^15.0.0",
-    "@angular/compiler": "^15.0.0",
     "@angular/compiler-cli": "^15.0.0",
     "@angular/language-service": "^15.0.0",
     "@ionic/angular-toolkit": "^6.0.0",
