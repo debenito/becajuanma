@@ -3,6 +3,7 @@ var app      = express();
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
 var cors = require('cors');
+var port = process.env.PORT || 3000;
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({'extended':'true'}));
@@ -17,7 +18,7 @@ app.use(function(req, res, next) {
 });
 
 app.use(express.static(__dirname));
-app.listen(process.env.PORT || 5000 , function(){
+app.listen(port, "0.0.0.0", function() {
     console.log("Node app is running at localhost:" + app.get('port'));
   });
 
