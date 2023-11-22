@@ -5,12 +5,12 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": " npm run ionic:build --prod",
-    "build": "ng build ",
-    "ionic:build": "node --max-old-space-size=8192 ng build",
+    "start": "ng serve --port 8080",
+    "build": "ng build --aot --minifyjs --minifycss",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "posintall": "ng build --configuration production"
   },
   "private": true,
   "dependencies": {
