@@ -7,6 +7,7 @@ import { Observable, catchError, map } from 'rxjs';
 import { error } from 'console';
 import { RoleService } from '../service/role.service';
 import { UserJWT } from '../model/user-jwt.model';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -58,7 +59,7 @@ export class InicioSesionPage implements OnInit {
     let queryParams = new HttpParams();
     queryParams = queryParams.append("username", jwt.username);
     queryParams = queryParams.append("password", jwt.password);
-    return this.http.get<UserJWT>('/api/login', { params: queryParams });
+    return this.http.get<UserJWT>(environment.API_URL+'/api/login', { params: queryParams });
 
   }
 
