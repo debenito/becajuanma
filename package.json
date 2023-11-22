@@ -5,8 +5,8 @@
   "homepage": "https://ionicframework.com/",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 8080",
-    "build": "ng build --configuration production",
+    "start": " node node --optimize_for_size --max-old-space-size=8192 ./node_modules/@ionic/app-scripts/bin/ionic-app-scripts.js server",
+    "build": "node --optimize_for_size --max-old-space-size=8192 ./node_modules/@ionic/app-scripts/bin/ionic-app-scripts.js build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
