@@ -10,7 +10,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
-    "posintall": "ng build --configuration production"
+    "posintall": "ng build --aot --configuration production"
   },
   "private": true,
   "dependencies": {
