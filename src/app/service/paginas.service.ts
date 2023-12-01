@@ -20,7 +20,7 @@ export class PaginasService {
 
   crearPaginas(home:HomeModel):Observable<HomeModel>{
     let token = 'Bearer ' +localStorage.getItem("token") || "" ;
-    return this.http.post<HomeModel>('/api/home',home,{
+    return this.http.post<HomeModel>(environment.API_URL+'/api/home',home,{
       headers: {'Authorization': token}
     });
   }

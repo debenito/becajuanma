@@ -33,15 +33,16 @@ export class RegistroPage implements OnInit {
 );
   }
 
-  deleteUser(email:string) {
+  deleteUser(username:string) {
 
-    this.userService.deleteUser(email).subscribe(
+    this.userService.deleteUser(username).subscribe(
       data => {
         if (data.message.search("Error"))
           this.alertError(data);
         else
           this.alertCorrect(data);
         this.read = true;
+        window.location.reload();
 
       },
       
@@ -52,7 +53,6 @@ export class RegistroPage implements OnInit {
          this.alertError(error)
     }
     )
-    window.location.reload();
 
   }
 
@@ -65,6 +65,7 @@ export class RegistroPage implements OnInit {
         else
           this.alertCorrect(data);
         this.read = true;
+        window.location.reload();
 
       },
       error => {  
@@ -74,7 +75,6 @@ export class RegistroPage implements OnInit {
         this.alertError(error)
     }
     )
-    window.location.reload();
 
   }
 
@@ -86,6 +86,7 @@ export class RegistroPage implements OnInit {
         else
           this.alertCorrect(data);
         this.read = true;
+        window.location.reload();
 
       },
       error => { 
@@ -94,7 +95,6 @@ export class RegistroPage implements OnInit {
         else
         this.alertError(error) }
     )
-    window.location.reload()
   }
 
   async alertError(data:any) {

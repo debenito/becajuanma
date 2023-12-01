@@ -50,7 +50,7 @@ export class InicioSesionPage implements OnInit {
       error => {
         this.alertError();
         localStorage.clear();
-        this.router.navigateByUrl("/home").then(() => { window.location.reload() });
+        //this.router.navigateByUrl("/home").then(() => { window.location.reload() });
 
 
       });
