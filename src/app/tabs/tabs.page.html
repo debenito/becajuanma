@@ -32,10 +32,22 @@
   <!-- Seccion de menu inferior-->
   <ion-tabs >
 
-    <ion-tab-bar slot="bottom" [ngClass]="{'activarTab': !tabs, 'ocultarTab': tabs}">
+    <ion-tab-bar slot="bottom" >
       <ion-tab-button tab="home">
-        <ion-icon name="triangle"></ion-icon>
-        <ion-label>Home</ion-label>
+        <ion-icon name="home-outline"></ion-icon>
+          <ion-label>Inicio</ion-label>
+      </ion-tab-button>
+      <ion-tab-button tab="facebook" (click)="facebook()">
+      <ion-icon name="logo-facebook"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="instagram" (click)="instagram()">
+      <ion-icon name="logo-instagram"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="email" (click)="email()">
+      <ion-icon name="mail-outline"></ion-icon>
+      </ion-tab-button>
+      <ion-tab-button tab="call" (click)="call()">
+      <ion-icon name="call-outline"></ion-icon>
       </ion-tab-button>
 
     </ion-tab-bar>

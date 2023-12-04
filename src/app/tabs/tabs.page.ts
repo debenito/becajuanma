@@ -34,4 +34,20 @@ export class TabsPage implements OnInit {
   }
 
 
+ facebook(){
+  window.open("https://www.facebook.com/profile.php?id=61554207510605")
+ }
+ instagram(){
+  window.open("https://instagram.com/gandulin2004?igshid=OGQ5ZDc2ODk2ZA==")
+ }
+
+ email(){
+    window.open("mailto:gandulincaa@gmail.com");
+ }
+
+ call(){
+
+ }
+
+
 }
